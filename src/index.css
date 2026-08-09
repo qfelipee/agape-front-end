@@ -1,0 +1,60 @@
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.layout-main {
+  animation: pageIn 0.3s ease-out;
+}
+
+
+:root {
+  --cor-fundo: #0d0d0d;
+  --cor-fundo-card: #1a1a1a;
+  --cor-borda: #2a2a2a;
+  --cor-dourado: #f5a623;
+  --cor-dourado-hover: #ffb84d;
+  --cor-texto: #f5f5f5;
+  --cor-texto-secundario: #a3a3a3;
+  --cor-verde: #22c55e;
+  --cor-vermelho: #ef4444;
+  --sidebar-largura: 240px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+img {
+  max-width: 100%;
+}

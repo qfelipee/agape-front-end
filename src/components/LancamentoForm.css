@@ -1,0 +1,132 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.form-overlay {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.form-card {
+  animation: slideUp 0.25s ease-out;
+}
+
+
+
+
+.form-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.form-card {
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 420px;
+  margin: auto;
+}
+
+.form-card h2 {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.form-campo {
+  margin-bottom: 16px;
+}
+
+.form-campo label {
+  display: block;
+  font-size: 13px;
+  color: var(--cor-texto-secundario);
+  margin-bottom: 6px;
+}
+
+.form-campo input,
+.form-campo select {
+  width: 100%;
+  padding: 12px 14px;
+  background-color: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  color: var(--cor-texto);
+  font-size: 14px;
+}
+
+.form-campo input:focus,
+.form-campo select:focus {
+  outline: none;
+  border-color: var(--cor-dourado);
+}
+
+.form-erro {
+  color: var(--cor-vermelho);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.form-acoes {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.form-btn-cancelar,
+.form-btn-salvar {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+}
+
+.form-btn-cancelar {
+  background-color: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-secundario);
+}
+
+.form-btn-salvar {
+  background-color: var(--cor-dourado);
+  color: #1a1a1a;
+}
+
+.form-btn-salvar:disabled {
+  opacity: 0.6;
+}
+
+/* ===== Responsivo ===== */
+@media (max-width: 480px) {
+  .form-card {
+    padding: 24px;
+  }
+
+  .form-acoes {
+    flex-direction: column;
+  }
+}

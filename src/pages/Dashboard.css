@@ -1,0 +1,115 @@
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.dashboard-filtro {
+  display: flex;
+  gap: 12px;
+}
+
+.dashboard-filtro select {
+  padding: 10px 14px;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  color: var(--cor-texto);
+  font-size: 14px;
+}
+
+.dashboard-kpis {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.kpi-card {
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 20px;
+  flex: 1;
+  min-width: 200px;
+  text-align: center;
+  background-color: var(--cor-fundo-card);
+}
+
+.kpi-card p {
+  color: var(--cor-texto-secundario);
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.dashboard-grafico-linha {
+  margin-top: 40px;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.dashboard-pizzas {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.dashboard-pizza-item {
+  flex: 1;
+  min-width: 320px;
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.dashboard-vazio {
+  color: var(--cor-texto-secundario);
+  text-align: center;
+  padding: 40px 0;
+}
+
+/* ===== Responsivo do filtro do dashboard ===== */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dashboard-filtro {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .dashboard-filtro select {
+    flex: 1 1 140px;
+    min-width: 0;
+  }
+
+  .dashboard-grafico-linha,
+  .dashboard-pizza-item {
+    padding: 16px;
+  }
+
+  .dashboard-pizza-item {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-filtro {
+    flex-direction: column;
+  }
+
+  .dashboard-filtro select {
+    width: 100%;
+  }
+
+  .kpi-card {
+    min-width: 100%;
+  }
+}
