@@ -1,22 +1,33 @@
 import { useState } from "react";
 import { useAuth } from "../context/useAuth";
 import Sidebar from "./Sidebar";
+import StatusOverlay from "./StatusOverlay";
 import "./Layout.css";
 
 function Layout({ children }) {
   const { user, logoutUser } = useAuth();
-  const [saindo, setSaindo] = useState(false);
   const [sidebarAberta, setSidebarAberta] = useState(false);
+  const [saindo, setSaindo] = useState(false);
 
   function handleLogout() {
     setSaindo(true);
     setTimeout(() => {
       logoutUser();
-    }, 300);
+    }, 1000);
+  }
+
+  if (saindo) {
+    return (
+      <StatusOverlay
+        tipo="saindo"
+        titulo="Saindo da conta..."
+        subtitulo="Até logo!"
+      />
+    );
   }
 
   return (
-    <div className={`layout ${saindo ? "layout-saindo" : ""}`}>
+    <div className="layout">
       <Sidebar aberta={sidebarAberta} onFechar={() => setSidebarAberta(false)} />
       <div className="layout-content">
         <header className="layout-topbar">

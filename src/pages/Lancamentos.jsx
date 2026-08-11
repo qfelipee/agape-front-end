@@ -136,7 +136,7 @@ function Lancamentos() {
             {pagina && (
                 <>
                     <div className="tabela-wrapper">
-                        <table className="lancamentos-tabela">"
+                        <table className="lancamentos-tabela">
                             <thead>
                                 <tr>
                                     <th>Tipo</th>

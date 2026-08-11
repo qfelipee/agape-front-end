@@ -1,0 +1,66 @@
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlayPop {
+  from {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.status-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--cor-fundo);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 300;
+  animation: overlayFadeIn 0.25s ease-out;
+}
+
+.status-card {
+  text-align: center;
+  animation: overlayPop 0.35s ease-out;
+}
+
+.status-icone {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 auto 20px;
+}
+
+.status-icone-boas-vindas {
+  background-color: rgba(34, 197, 94, 0.15);
+  color: var(--cor-verde);
+}
+
+.status-icone-saindo {
+  background-color: rgba(245, 166, 35, 0.15);
+  color: var(--cor-dourado);
+}
+
+.status-card h2 {
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.status-card p {
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+}
