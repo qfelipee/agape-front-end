@@ -24,7 +24,7 @@ function Login() {
     try {
       const data = await login(email, senha);
       loginUser(
-        { id: data.id, nome: data.nome, email: data.email, role: data.role },
+        { id: data.id, nome: data.nome, funcao: data.funcao, email: data.email, role: data.role },
         data.token
       );
 

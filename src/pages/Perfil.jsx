@@ -26,7 +26,7 @@ function Perfil() {
       const atualizado = await updateUsuario(token, user.id, dados);
 
       loginUser(
-        { id: atualizado.id, nome: atualizado.nome, email: atualizado.email, role: atualizado.role },
+        { id: atualizado.id, nome: atualizado.nome, funcao: atualizado.funcao, email: atualizado.email, role: atualizado.role },
         token
       );
 

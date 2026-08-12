@@ -83,7 +83,7 @@ function Usuarios() {
 
       {!carregando && !erro && (
         <div className="tabela-wrapper">
-          <table className="lancamentos-tabela">"
+          <table className="lancamentos-tabela">
             <thead>
               <tr>
                 <th>Nome</th>
