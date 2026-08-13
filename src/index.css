@@ -21,6 +21,18 @@
   --sidebar-largura: 240px;
 }
 
+[data-tema="claro"] {
+  --cor-fundo: #f5f5f5;
+  --cor-fundo-card: #ffffff;
+  --cor-borda: #e0e0e0;
+  --cor-dourado: #d68a10;
+  --cor-dourado-hover: #b8760d;
+  --cor-texto: #1a1a1a;
+  --cor-texto-secundario: #6b6b6b;
+  --cor-verde: #16a34a;
+  --cor-vermelho: #dc2626;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -36,8 +48,7 @@ body {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
   font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-  overflow-x: hidden;
-  width: 100%;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 button {

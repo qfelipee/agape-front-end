@@ -7,6 +7,7 @@ import Dashboard from "./pages/Dashboard";
 import Lancamentos from "./pages/Lancamentos";
 import Usuarios from "./pages/Usuarios";
 import Perfil from "./pages/Perfil";
+import { ThemeProvider } from "./context/ThemeContext";
 
 function RotaProtegida({ children }) {
   const { token } = useAuth();
@@ -71,9 +72,11 @@ function AppRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <AuthProvider>
-        <AppRoutes />
-      </AuthProvider>
+      <ThemeProvider>
+        <AuthProvider>
+          <AppRoutes />
+        </AuthProvider>
+      </ThemeProvider>
     </BrowserRouter>
   );
 }

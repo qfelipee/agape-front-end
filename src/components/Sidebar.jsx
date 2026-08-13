@@ -1,13 +1,15 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
+import { useTheme } from "../context/useTheme";
 import logo from "../assets/logo.png";
 import TutorialModal from "./TutorialModal";
-import { BookOpen } from "lucide-react";
+import { BookOpen, Sun, Moon } from "lucide-react";
 import "./Sidebar.css";
 
 function Sidebar({ aberta, onFechar }) {
   const { user } = useAuth();
+  const { tema, alternarTema } = useTheme();
   const [mostrarTutorial, setMostrarTutorial] = useState(false);
 
   return (
@@ -36,10 +38,17 @@ function Sidebar({ aberta, onFechar }) {
           </NavLink>
         </nav>
 
-        <button className="sidebar-tutorial-btn" onClick={() => setMostrarTutorial(true)}>
-          <BookOpen size={16} />
-          Ver Tutorial
-        </button>
+        <div className="sidebar-rodape">
+          <button className="sidebar-tutorial-btn" onClick={() => setMostrarTutorial(true)}>
+            <BookOpen size={16} />
+            Ver Tutorial
+          </button>
+
+          <button className="sidebar-tema-btn" onClick={alternarTema}>
+            {tema === "escuro" ? <Sun size={16} /> : <Moon size={16} />}
+            {tema === "escuro" ? "Modo Claro" : "Modo Escuro"}
+          </button>
+        </div>
       </aside>
 
       {mostrarTutorial && <TutorialModal onFechar={() => setMostrarTutorial(false)} />}
