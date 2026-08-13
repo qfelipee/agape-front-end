@@ -1,0 +1,132 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tutorial-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  animation: fadeIn 0.2s ease-out;
+  padding: 20px;
+}
+
+.tutorial-card {
+  background-color: var(--cor-fundo-card);
+  border: 1px solid var(--cor-borda);
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.25s ease-out;
+}
+
+.tutorial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px 0;
+}
+
+.tutorial-header h2 {
+  font-size: 18px;
+}
+
+.tutorial-fechar {
+  background: transparent;
+  border: none;
+  color: var(--cor-texto-secundario);
+  font-size: 18px;
+  padding: 4px 8px;
+}
+
+.tutorial-fechar:hover {
+  color: var(--cor-texto);
+}
+
+.tutorial-abas {
+  display: flex;
+  gap: 8px;
+  padding: 20px 24px 0;
+  border-bottom: 1px solid var(--cor-borda);
+  flex-wrap: wrap;
+}
+
+.tutorial-aba {
+  background: transparent;
+  border: none;
+  color: var(--cor-texto-secundario);
+  padding: 10px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+}
+
+.tutorial-aba-ativa {
+  color: var(--cor-dourado);
+  border-bottom: 2px solid var(--cor-dourado);
+}
+
+.tutorial-conteudo {
+  padding: 24px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--cor-texto);
+}
+
+.tutorial-conteudo p {
+  margin-bottom: 12px;
+}
+
+.tutorial-conteudo ul {
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tutorial-conteudo li {
+  color: var(--cor-texto-secundario);
+}
+
+.tutorial-conteudo strong {
+  color: var(--cor-texto);
+}
+
+@media (max-width: 480px) {
+  .tutorial-card {
+    max-height: 90vh;
+  }
+
+  .tutorial-abas {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  .tutorial-aba {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+}

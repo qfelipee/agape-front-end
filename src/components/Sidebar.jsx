@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 import logo from "../assets/logo.png";
+import TutorialModal from "./TutorialModal";
 import "./Sidebar.css";
 
 function Sidebar({ aberta, onFechar }) {
   const { user } = useAuth();
+  const [mostrarTutorial, setMostrarTutorial] = useState(false);
 
   return (
     <>
@@ -31,7 +34,13 @@ function Sidebar({ aberta, onFechar }) {
             Meu Perfil
           </NavLink>
         </nav>
+
+        <button className="sidebar-tutorial-btn" onClick={() => setMostrarTutorial(true)}>
+          📖 Ver Tutorial
+        </button>
       </aside>
+
+      {mostrarTutorial && <TutorialModal onFechar={() => setMostrarTutorial(false)} />}
     </>
   );
 }
