@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 import logo from "../assets/logo.png";
 import TutorialModal from "./TutorialModal";
+import { BookOpen } from "lucide-react";
 import "./Sidebar.css";
 
 function Sidebar({ aberta, onFechar }) {
@@ -36,7 +37,8 @@ function Sidebar({ aberta, onFechar }) {
         </nav>
 
         <button className="sidebar-tutorial-btn" onClick={() => setMostrarTutorial(true)}>
-          📖 Ver Tutorial
+          <BookOpen size={16} />
+          Ver Tutorial
         </button>
       </aside>
 
