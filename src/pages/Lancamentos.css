@@ -150,6 +150,23 @@
 .btn-limpar-filtro:hover {
   border-color: var(--cor-dourado);
   color: var(--cor-dourado);
+
+
+}
+
+.btn-exportar {
+  background: transparent;
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto-secundario);
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.btn-exportar:hover {
+  border-color: var(--cor-dourado);
+  color: var(--cor-dourado);
 }
 
 /* ===== Responsivo ===== */

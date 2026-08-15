@@ -3,6 +3,7 @@ import { useAuth } from "../context/useAuth";
 import { getUsuarios, createUsuario, updateUsuario, deleteUsuario } from "../services/api";
 import UsuarioForm from "../components/UsuarioForm";
 import ConfirmModal from "../components/ConfirmModal";
+import { exportarExcel, exportarPDF } from "../utils/export";
 import "./Lancamentos.css";
 
 function Usuarios() {
@@ -63,19 +64,42 @@ function Usuarios() {
     }
   }
 
+  const colunasUsuario = [
+    { titulo: "Nome", valor: (u) => u.nome },
+    { titulo: "Email", valor: (u) => u.email },
+    { titulo: "Função", valor: (u) => u.funcao || "-" },
+    { titulo: "Role", valor: (u) => u.role },
+  ];
+
+  function handleExportarExcel() {
+    exportarExcel(usuarios, colunasUsuario, "usuarios");
+  }
+
+  function handleExportarPDF() {
+    exportarPDF(usuarios, colunasUsuario, "usuarios", "Relatório de Usuários");
+  }
+
   return (
     <div>
       <div className="lancamentos-header">
         <h1>Usuários</h1>
-        <button
-          className="btn-novo"
-          onClick={() => {
-            setEditando(null);
-            setMostrarForm(true);
-          }}
-        >
-          + Novo Usuário
-        </button>
+        <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
+          <button className="btn-exportar" onClick={handleExportarExcel}>
+            Exportar Excel
+          </button>
+          <button className="btn-exportar" onClick={handleExportarPDF}>
+            Exportar PDF
+          </button>
+          <button
+            className="btn-novo"
+            onClick={() => {
+              setEditando(null);
+              setMostrarForm(true);
+            }}
+          >
+            + Novo Usuário
+          </button>
+        </div>
       </div>
 
       {carregando && <p>Carregando...</p>}

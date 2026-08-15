@@ -165,3 +165,14 @@ export async function deleteUsuario(token, id) {
     throw new Error(erro.mensagem || "Erro ao excluir usuário");
   }
 }
+
+export async function getLancamentosParaExportar(token, { tipo, dataInicio, dataFim } = {}) {
+  const resultado = await getLancamentos(token, {
+    tipo,
+    dataInicio,
+    dataFim,
+    page: 0,
+    size: 10000,
+  });
+  return resultado.content;
+}
