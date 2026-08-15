@@ -5,6 +5,7 @@ import { useAuth } from "../context/useAuth";
 import logo from "../assets/logo.png";
 import StatusOverlay from "../components/StatusOverlay";
 import "./Login.css";
+import PasswordInput from "../components/PasswordInput";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -68,8 +69,7 @@ function Login() {
           </div>
           <div className="login-campo">
             <label>Senha</label>
-            <input
-              type="password"
+            <PasswordInput
               value={senha}
               onChange={(e) => setSenha(e.target.value)}
               required

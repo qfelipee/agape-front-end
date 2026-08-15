@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/useAuth";
 import { updateUsuario } from "../services/api";
+import PasswordInput from "../components/PasswordInput";
 import "./Lancamentos.css";
 
 function Perfil() {
@@ -62,7 +63,7 @@ function Perfil() {
 
           <div className="form-campo">
             <label>Nova senha (deixe em branco para manter)</label>
-            <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <PasswordInput value={senha} onChange={(e) => setSenha(e.target.value)} />
           </div>
 
           <div className="form-campo">

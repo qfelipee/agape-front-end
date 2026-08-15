@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PasswordInput from "./PasswordInput";
 import "../components/LancamentoForm.css";
 
 function UsuarioForm({ inicial, onSalvar, onCancelar }) {
@@ -51,7 +52,7 @@ function UsuarioForm({ inicial, onSalvar, onCancelar }) {
 
           <div className="form-campo">
             <label>{inicial ? "Nova senha (deixe em branco para manter)" : "Senha"}</label>
-            <input type="password" value={senha} onChange={(e) => setSenha(e.target.value)} />
+            <PasswordInput value={senha} onChange={(e) => setSenha(e.target.value)} />
           </div>
 
           <div className="form-campo">
