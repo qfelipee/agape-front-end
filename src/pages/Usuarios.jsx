@@ -3,7 +3,7 @@ import { useAuth } from "../context/useAuth";
 import { getUsuarios, createUsuario, updateUsuario, deleteUsuario } from "../services/api";
 import UsuarioForm from "../components/UsuarioForm";
 import ConfirmModal from "../components/ConfirmModal";
-import { exportarExcel, exportarPDF } from "../utils/export";
+import { exportarExcel, exportarPDF } from "../../utils/export";
 import "./Lancamentos.css";
 
 function Usuarios() {

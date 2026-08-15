@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { useAuth } from "../context/useAuth";
 import { getLancamentos, createLancamento, updateLancamento, deleteLancamento, getLancamentosParaExportar } from "../services/api";
-import { exportarExcel, exportarPDF } from "../utils/export";
+import { exportarExcel, exportarPDF } from "../../utils/export";
 import LancamentoForm from "../components/LancamentoForm";
 import ConfirmModal from "../components/ConfirmModal";
 import "./Lancamentos.css";
